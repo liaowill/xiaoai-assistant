@@ -1,0 +1,27 @@
+# 示例配置：复制成 xiao_config.yaml 后使用。
+# 本文件不含任何账号或密钥。真实凭据由安装脚本写进 macOS「钥匙串」，
+# 运行时通过环境变量注入：MI_USER / MI_PASS / OPENAI_API_KEY / MI_DID。
+
+# 第一代小米 AI 音箱（MDZ-25-DA / MDZ-25-DT）在小米云里的硬件代号。
+# 其他型号请先用设备探测工具确认代号，不要照抄这一行。
+hardware: S12A
+
+# xiaogpt 3.24 起改用 provider:model 写法。
+# 换成任意 OpenAI 兼容服务时，只改 model 与 api_base 两行即可。
+model: "openai:LongCat-2.5"
+api_base: "https://api.longcat.chat/openai/v1"
+api_format: chat
+
+# 系统提示词：口语、短句，音箱念出来才自然。
+prompt: "你是家里的语音助手。用口语回答，50字以内，先给结论。不要输出 Markdown、列表、括号注释或表情符号。"
+
+# 触发词必须出现在问题开头，否则仍由小爱自己回答。
+keyword:
+  - "请问"
+  - "帮我"
+  - "回答"
+
+mute_xiaoai: true
+use_command: false
+stream: true
+tts: mi
