@@ -1,0 +1,45 @@
+# ===== 账号与密钥：一律不进仓库 =====
+.mi.token
+.verify_url
+*.token
+.env
+.env.*
+!config/credentials.example.env
+*.pem
+*.p12
+*api_key*
+*secret*
+!scripts/check-secrets.sh
+
+# ===== 本机运行数据 =====
+service.log
+install.log
+conversations.jsonl
+conversations_backup.jsonl
+deleted_conversations.jsonl
+*.jsonl
+*.log
+
+# ===== Python 环境 =====
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# ===== 本机构建产物 =====
+*.app/
+build/
+dist/
+*.dmg
+*.zip
+.DS_Store
+
+# ===== 过程截图：常含真实问答、浏览器后台页面，一律不传 =====
+screenshots/
+app_screen.png
+*_v*.png
+*_screen*.png
+
+# ===== 编辑器 =====
+.idea/
+.vscode/
